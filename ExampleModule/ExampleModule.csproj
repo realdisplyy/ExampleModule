@@ -34,9 +34,9 @@
     <Reference Include="0Harmony">
       <HintPath>..\ref\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="BaseModule">
-      <HintPath>Z:\SteamLibrary\steamapps\common\Gorilla Tag\Displyy\Modules\BaseModule.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    <Reference Include="BaseModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ref\BaseModule.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>..\ref\BepInEx.dll</HintPath>
