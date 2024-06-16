@@ -78,6 +78,9 @@ public class ExternalModule : BaseModule
         // This method runs when the user changes the configuration
         // Example usage:
         // howfast = CEhowfast.Value * 1.5f;
+
+        // For the controller button example to work so that the shouldRun bool gets set to true when the controller button is pressed:
+        //  controllerButtonToRun = CEbuttonToDo.Value;
     }
 
     // Configuration entries for settings
