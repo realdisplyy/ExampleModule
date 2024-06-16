@@ -128,3 +128,6 @@ public class ExternalModule : BaseModule
 2. Place the `.dll` file in the following path: `Gorilla Tag/Displyy/Modules`.
 
 This is how you can create and configure your own external modules for the Displyy Mod Menu in Gorilla Tag.
+
+## Instructions for developers
+Once your module is working, please send your code to displyy (displyy4) on Discord. I will add it to the mod menu. Just send the .cs file(s).
