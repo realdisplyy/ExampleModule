@@ -36,6 +36,11 @@ using UnityEngine.EventSystems;
 
 public class ExternalModule : BaseModule
 {
+    public ExternalModule()
+    {
+        this.modIsFor = ModIsFor.Both; // If set to menu it will only show up in the menu and not in the GUI. 
+        this.aliases.Add("Example"); // When user searches for module it will also show up
+    }
     public override bool Enabled { get; set; } = false;
     public override string Category { get; set; } = "External";
     public override string DisplayName { get; set; } = "External Module";
@@ -112,6 +117,57 @@ public class ExternalModule : BaseModule
         // );
     }
 }
+```
+
+### More 
+```csharp
+    public ExternalModule()
+    {
+        this.enumManagerBase.InitializeEnum<ExampleEnum>("example enum"); // has to contain the word 'enum' for it to work.
+    }
+
+    public enum ExampleEnum
+    {
+        Option1,
+        Option2,
+        Option3
+    }
+
+    private static ConfigEntry<int> CEExampleEnum;
+     public static void BindConfigEntries(string DisplayName)
+     {
+         CEExampleEnum = SettingsManager.configFile.Bind<int>(
+             section: DisplayName,
+             key: "Box type enum", // Has to contain the word 'enum' for it to work
+             defaultValue: (int)ExampleEnum.Option1,
+             description: "Example options"
+         );
+    }
+
+    private void Update()
+    {
+        // Executed every frame once enabled.
+
+        // Example 1: Using switch statement
+        switch (CEExampleEnum.Value)
+        {
+            case (int)ExampleEnum.Option1:
+                // Option 1 code
+                break;
+            case (int)ExampleEnum.Option2:
+                // Option 2 code
+                break;
+            case (int)ExampleEnum.Option3:
+                // Option 3 code
+                break;
+        }
+
+        // Example 2: Using if statement
+        if (CEExampleEnum.Value == (int)ExampleEnum.Option1)
+        {
+            // Option 1 code
+        }
+    }
 ```
 
 ### Explanation
